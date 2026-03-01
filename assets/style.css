@@ -71,3 +71,7 @@ nav ul {
    flex-direction: row;
    list-style: none;
 }
+
+.submitButton {
+   color: #000000;
+}
