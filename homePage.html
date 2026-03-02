@@ -22,11 +22,12 @@
             oportunidade para ver os melhores levantadores de peso do mundo a
             competir!
          </span>
-         <br /><br />
+         <br/>
+         <h2 id="eventCountDownText"></h2>
+         <br/>
          <nav>
             <a href="form.html">Fomulário de Candidatura</a>
          </nav>
-
          <br />
          <hr />
          <section>
@@ -77,7 +78,22 @@
                </tr>
             </table>
          </section>
+         <br />
+         <hr />
+         <section>
+            <h2>Slideshow</h2>
+            <div id="slideshowContainer" class="slideshow-container">
+               <!-- Next and previous buttons -->
+               <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+               <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
 
+            <!-- The dots/circles -->
+            <div id="slideShowDots" style="text-align:center"></div>
+         </section>
+         <br />
+         <hr />
          <aside>
             <h2>Notícias</h2>
             <article>
@@ -144,5 +160,6 @@
             </ul>
          </footer>
       </main>
+      <script src="./main.js"></script>
    </body>
 </html>
