@@ -4,6 +4,10 @@ const slideShowImages = ['https://images.wallpapersden.com/image/download/bodybu
 ];
 
 let slideIndex= 0;
+let numberOfStandardTicket = 0;
+let numberOfPremiumTicket = 0;
+let numberOfVIPTicket = 0;
+var totalTicketValue = 0;
 buildSlides();
 showSlides(slideIndex);
 
@@ -112,3 +116,27 @@ function eventCountdownTimer() {
     document.getElementById("eventCountDownText").textContent = 'Tempo até o evento: ' + dias + ' dias, ' + horas + 'h ' + minutos + 'm ' + segundos + 's';
 }
 setInterval(eventCountdownTimer, 1000);
+
+function addTicket(button) {
+   const countSpan = button.parentElement.querySelector('.ticket-count');
+   const currentCount = parseInt(countSpan.textContent) + 1;
+   countSpan.textContent = currentCount;
+   
+   const ticketType = button.parentElement.dataset.ticket;
+   if (ticketType === 'standard') numberOfStandardTicket = currentCount;
+   if (ticketType === 'premium') numberOfPremiumTicket = currentCount;
+}
+
+function subtractTicket(button) {
+   const countSpan = button.parentElement.querySelector('.ticket-count');
+   let current = parseInt(countSpan.textContent);
+   
+   if (current > 0) {
+      current--;
+      countSpan.textContent = current;
+      
+      const ticketType = button.parentElement.dataset.ticket;
+      if (ticketType === 'standard') numberOfStandardTicket = current;
+      if (ticketType === 'premium') numberOfPremiumTicket = current;
+   }
+}

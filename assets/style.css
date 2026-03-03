@@ -7,13 +7,16 @@
 
 header {
    background-image: url(https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
-   height: 8rem;
+   background-color: transparent;
+   position: relative;
+   min-height: 8rem;
    display: flex;
    align-items: center;
    justify-content: center;
-   h1 {
-      background-color: null;
-   }
+}
+
+header h1 {
+   margin: 0;
 }
 
 body {
@@ -160,6 +163,39 @@ h2 {
 
 .active, .dot:hover {
    background-color: #717171;
+}
+
+.btn{
+   border: solid red 3px;
+   border-radius: 10px;
+   padding: 1rem;
+   background-color: black;
+   color: red;
+   text-decoration: none;
+}
+
+.btnSmaller {
+   border: solid red 3px;
+   border-radius: 10px;
+   padding: 0.4rem;
+   background-color: black;
+   color: red;
+   text-decoration: none;
+}
+
+header .btn {
+   position: absolute;
+   right: 1rem;
+   top: 50%;
+   transform: translateY(-50%);
+}
+
+.quantity-input {
+   width: 20px;
+   height: 20px;
+   color: black;
+   background-color: transparent;
+   text-align: center;
 }
 
 /* Fading animation */
