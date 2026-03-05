@@ -23,6 +23,8 @@ function plusSlides(n) {
         slideIndex = slideShowImages.length - 1;
     }
 
+    clearInterval(slideShowAutoInterval);
+    slideShowAutoInterval = setInterval(slideShowAuto, 5000);
     showSlides(slideIndex);
 }
 
@@ -95,7 +97,7 @@ function slideShowAuto() {
 
     showSlides(slideIndex);
 }
-setInterval(slideShowAuto, 5000);
+let slideShowAutoInterval = setInterval(slideShowAuto, 5000);
 
 function eventCountdownTimer() {
     // Data/hora do evento (imaginando que este seria a 25 de agosto)
