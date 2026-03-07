@@ -1,0 +1,31 @@
+header {
+   background-image: url("https://melmagazine.com/uploads/2021/09/how_much_does_gym_bar_weigh.jpg");
+   background-position: 0 60%;
+   background-repeat: no-repeat;
+   background-size: cover;
+   height: 8rem;
+   display: grid;
+   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+   grid-template-areas: "empty title nav";
+   align-items: center;
+   width: 100%;
+   max-width: 100%;
+
+   h1 {
+      grid-area: title;
+      color: white;
+      font-size: 3.5rem;
+      text-align: center;
+      -webkit-text-stroke: 2.5px black;
+      text-transform: capitalize;
+   }
+
+   button,
+   nav {
+      grid-area: nav;
+      align-self: center;
+      justify-self: end;
+      margin-right: 2rem;
+      cursor: pointer;
+   }
+}

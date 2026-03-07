@@ -1,8 +1,14 @@
 #Comment {
+   padding: 1rem;
+   border: 2px solid white;
+   border-radius: 1.25rem;
+   background: black;
+   color: white;
+   cursor: text;
+   font-size: 1.1rem;
+   transition: 0.2s;
    width: 100%;
-   height: 10rem;
-   border-radius: 10px;
-   border: none;
+   height: 7rem;
 }
 
 #formValues {
@@ -14,30 +20,70 @@
 .FormSection {
    display: flex;
    flex-direction: column;
-   gap: 0.2rem;
+   gap: 0.8rem;
    align-items: center;
 }
 
 .InputSectionTitle {
-   font-size: 1.2rem;
+   font-size: 1.5rem;
    background-color: black;
    width: 100%;
    display: flex;
    justify-content: center;
    align-items: center;
+   font-weight: 600;
+}
+
+.ToggleGroup {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 0.5rem;
+   margin-top: 0.5rem;
+   justify-content: center;
+}
+
+.ToggleBtn {
+   padding: 6px 14px;
+   border: 2px solid white;
+   border-radius: 1.25rem;
+   background: black;
+   color: white;
+   cursor: pointer;
+   font-size: 1.1rem;
+   transition: 0.2s;
+}
+
+.ToggleBtn:hover {
+   background: white;
+   color: black;
+}
+
+.ToggleBtn.active {
+   background: white;
+   border-color: black;
+   color: black;
+}
+
+.ToggleBtn.active:hover {
+   background: #ccc;
 }
 
 .FormInput {
    background-color: black;
-   width: 17rem;
+   width: 100%;
    display: flex;
    flex-direction: row-reverse;
-   justify-content: space-between;
-   p {
-      display: flex;
-      min-width: 2rem;
-      justify-content: center;
-      align-items: center;
+   justify-content: center;
+   input {
+      width: 70%;
+      padding: 6px 14px;
+      border: 2px solid white;
+      border-radius: 1.25rem;
+      background: black;
+      color: white;
+      cursor: text;
+      font-size: 1.1rem;
+      transition: 0.2s;
    }
 }
 
@@ -65,4 +111,9 @@
 #Submit::after {
    color: darkred;
    border-color: darkred;
+}
+
+#Submit:disabled {
+   color: gray;
+   border-color: gray;
 }

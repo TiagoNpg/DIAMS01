@@ -1,22 +1,10 @@
+@import url(./header.css);
+
 * {
    margin: 0;
    padding: 0;
    font-family: Arial, Helvetica, sans-serif;
    color: #fff;
-}
-
-header {
-   background-image: url(https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
-   background-color: transparent;
-   position: relative;
-   min-height: 8rem;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-}
-
-header h1 {
-   margin: 0;
 }
 
 body {
@@ -70,13 +58,6 @@ hr {
    width: 100%;
    margin: 0;
    padding: 0;
-}
-
-nav ul {
-   display: flex;
-   gap: 2rem;
-   flex-direction: row;
-   list-style: none;
 }
 
 .submitButton {
@@ -188,13 +169,6 @@ h2 {
    background-color: black;
    color: red;
    text-decoration: none;
-}
-
-header .btn {
-   position: absolute;
-   right: 1rem;
-   top: 50%;
-   transform: translateY(-50%);
 }
 
 .quantity-input {

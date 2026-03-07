@@ -64,6 +64,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
       commentInput.addEventListener("input", checkForSwearWords);
    }
+
+   document.querySelectorAll(".ToggleGroup").forEach((group) => {
+      const hiddenInput = document.getElementById(
+         group.id.replace("Group", "Input"),
+      );
+      if (!hiddenInput) return;
+
+      group.querySelectorAll(".ToggleBtn").forEach((btn) => {
+         btn.addEventListener("click", () => {
+            btn.classList.toggle("active");
+
+            const selected = [
+               ...group.querySelectorAll(".ToggleBtn.active"),
+            ].map((b) => b.dataset.value);
+
+            hiddenInput.value = JSON.stringify(selected);
+         });
+      });
+   });
 });
 
 function plusSlides(n) {
