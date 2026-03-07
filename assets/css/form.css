@@ -1,0 +1,66 @@
+#Comment {
+   width: 100%;
+   height: 10rem;
+}
+
+#formValues {
+   display: flex;
+   flex-direction: column;
+   gap: 2rem;
+   background-color: black;
+}
+.FormSection {
+   display: flex;
+   flex-direction: column;
+   gap: 0.2rem;
+   align-items: center;
+}
+
+.InputSectionTitle {
+   font-size: 1.2rem;
+   background-color: black;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.FormInput {
+   background-color: black;
+   width: 17rem;
+   display: flex;
+   flex-direction: row-reverse;
+   justify-content: space-between;
+   p {
+      display: flex;
+      min-width: 2rem;
+      justify-content: center;
+      align-items: center;
+   }
+}
+
+#Submit {
+   border: solid red 3px;
+   border-radius: 10px;
+   padding: 1rem;
+   background-color: black;
+   color: red;
+   text-decoration: none;
+}
+
+#Submit:hover {
+   transition: 0.2s;
+   background-color: red;
+   color: white;
+   border-color: black;
+   cursor: pointer;
+}
+
+#Submit:active {
+   background-color: indianred;
+}
+
+#Submit::after {
+   color: darkred;
+   border-color: darkred;
+}
