@@ -81,7 +81,7 @@ h2 {
 }
 
 .mySlides img {
-   width: 100%;
+   width: 700px;
    height: 400px; /* altura fixa */
    object-fit: cover; /* mantém proporção bonita */
    border-radius: 10px;
@@ -177,6 +177,40 @@ h2 {
    color: black;
    background-color: transparent;
    text-align: center;
+}
+
+.btnBuy {
+   border: solid red 3px;
+   border-radius: 10px;
+   padding: 0.4rem;
+   background-color: black;
+   color: red;
+   text-decoration: none;
+   margin-left: 1rem;
+}
+
+.btnSmaller:hover {
+   transition: 0.2s;
+   background-color: red;
+   color: white;
+   border-color: white;
+   cursor: pointer;
+}
+
+.ticket-premium {
+   color: gold;
+}
+
+.ticket-vip-rainbow {
+   background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+   background-clip: text;
+   -webkit-background-clip: text;
+   color: transparent;
+}
+
+.ticket-count {
+   margin: 0 0.5rem;
+   color: white;
 }
 
 /* Fading animation */

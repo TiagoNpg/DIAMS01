@@ -175,6 +175,7 @@ function eventCountdownTimer() {
       "s";
 }
 
+// Ticket buying logic a)
 function addTicket(button) {
    const countSpan = button?.parentElement?.querySelector(".ticket-count");
    if (!countSpan) return;
@@ -185,6 +186,8 @@ function addTicket(button) {
    const ticketType = button.parentElement.dataset.ticket;
    if (ticketType === "standard") numberOfStandardTicket = currentCount;
    if (ticketType === "premium") numberOfPremiumTicket = currentCount;
+   if (ticketType === "vip") numberOfVIPTicket = currentCount;
+   calculateTotal();
 }
 
 function subtractTicket(button) {
@@ -192,6 +195,9 @@ function subtractTicket(button) {
    if (!countSpan) return;
 
    let current = parseInt(countSpan.textContent);
+   if (current <= 0){       
+      return;
+   }
    if (current > 0) {
       current--;
       countSpan.textContent = current;
@@ -199,5 +205,40 @@ function subtractTicket(button) {
       const ticketType = button.parentElement.dataset.ticket;
       if (ticketType === "standard") numberOfStandardTicket = current;
       if (ticketType === "premium") numberOfPremiumTicket = current;
+      if (ticketType === "vip") numberOfVIPTicket = current;
    }
+   calculateTotal();
+}
+
+function calculateTotal() {
+   totalTicketValue =
+      numberOfStandardTicket * 25 +
+      numberOfPremiumTicket * 50 +
+      numberOfVIPTicket * 100;
+
+   const totalValueElement = document.getElementById("totalValue");
+   if (totalValueElement) totalValueElement.textContent = "Total: " + totalTicketValue + "€";
+}
+
+function buy() {
+   if (checkValidBuy()) {
+      alert("Compra realizada com sucesso! Total: " + totalTicketValue + "€");
+      numberOfStandardTicket = 0;
+      numberOfPremiumTicket = 0;
+      numberOfVIPTicket = 0;
+      totalTicketValue = 0;
+      document.querySelectorAll(".ticket-count").forEach((span) => {
+         span.textContent = "0";
+      });
+      const totalValueElement = document.getElementById("totalValue");
+      if (totalValueElement) totalValueElement.textContent = "Total: 0€";
+   }
+}
+
+function checkValidBuy() {
+   if (totalTicketValue === 0) {
+      alert("Por favor, selecione pelo menos um bilhete para comprar.");
+      return false;
+   }
+   return true;
 }

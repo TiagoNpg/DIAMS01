@@ -1,46 +1,74 @@
-<!doctype html>
-<link
-   rel="stylesheet"
-   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-/>
-<html>
+<!DOCTYPE html>
+<html lang="pt-PT">
    <head>
-      <meta charset="UTF-8" />
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Compra de Bilhetes</title>
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      />
       <link rel="stylesheet" href="./assets/css/style.css" />
    </head>
    <body>
       <header>
          <h1>Compra de Bilhetes</h1>
+         <nav aria-label="Navegação principal">
+            <a href="homePage.html" aria-label="Voltar à página inicial">
+               <i class="fa fa-home" aria-hidden="true"></i>
+            </a>
+         </nav>
       </header>
+
       <main>
-         <p>
-            Não perca a oportunidade de assistir ao vivo aos melhores
-            levantadores de peso do mundo competindo no Deadlift Championship!
-         </p>
-         <div class="ticket-item" data-ticket="standard">
-            <span>Bilhete Standard (€25)</span>
-            <button class="btnSmaller" onclick="subtractTicket(this)">
-               <i class="fa fa-minus"></i>
-            </button>
-            <span class="ticket-count">0</span>
-            <button class="btnSmaller" onclick="addTicket(this)">
-               <i class="fa fa-plus"></i>
-            </button>
-         </div>
+         <h2>
+            Não perca a oportunidade de assistir ao vivo os melhores levantadores
+            de peso do mundo competindo no Deadlift Championship!
+         </h2>
 
-         <div class="ticket-item" data-ticket="premium">
-            <span>Bilhete Premium (€50)</span>
+         <section aria-label="Tipos de bilhete">
+            <div class="ticket-item" data-ticket="standard">
+               <span>Bilhete Standard (€25)</span>
+               <button class="btnSmaller" type="button" onclick="subtractTicket(this)">
+                  <i class="fa fa-minus" aria-hidden="true"></i>
+               </button>
+               <span class="ticket-count">0</span>
+               <button class="btnSmaller" type="button" onclick="addTicket(this)">
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+               </button>
+            </div>
+            <br>
+            <div class="ticket-item" data-ticket="premium">
+               <span>Bilhete <span class="ticket-premium">Premium</span> (€50)</span>
+               <button class="btnSmaller" type="button" onclick="subtractTicket(this)">
+                  <i class="fa fa-minus" aria-hidden="true"></i>
+               </button>
+               <span class="ticket-count">0</span>
+               <button class="btnSmaller" type="button" onclick="addTicket(this)">
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+               </button>
+            </div>
+            <br>
+            <div class="ticket-item" data-ticket="vip">
+               <span>Bilhete <span class="ticket-vip-rainbow">VIP</span> <span  style="margin-left: 1.9rem;">(€100)</span></span>
+               <button class="btnSmaller" type="button" onclick="subtractTicket(this)">
+                  <i class="fa fa-minus" aria-hidden="true"></i>
+               </button>
+               <span class="ticket-count">0</span>
+               <button class="btnSmaller" type="button" onclick="addTicket(this)">
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+               </button>
+            </div>
+         </section>
 
-            <button class="btnSmaller" onclick="subtractTicket(this)">
-               <i class="fa fa-minus"></i>
-            </button>
-            <span class="ticket-count">0</span>
-            <button class="btnSmaller" onclick="addTicket(this)">
-               <i class="fa fa-plus"></i>
+         <div>
+            <span id="totalValue">Total: 0€</span>
+            <button class="btnSmaller btnBuy" type="button" onclick="buy()">
+               Comprar
             </button>
          </div>
       </main>
-      <script src="./assets/javascript/main.js"></script>
+
+      <script src="./assets/javascript/main.js" defer></script>
    </body>
 </html>
