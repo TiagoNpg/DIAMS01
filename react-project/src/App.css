@@ -1,0 +1,99 @@
+.page-content {
+  text-align: left;
+  padding: 24px;
+}
+
+.event-intro {
+  text-align: center;
+}
+
+.event-intro figure {
+  margin: 0;
+}
+
+.event-intro img {
+  width: 230px;
+  max-width: 100%;
+}
+
+.event-intro figcaption {
+  margin-top: 8px;
+  font-weight: 700;
+}
+
+.event-intro p {
+  max-width: 800px;
+  margin: 16px auto;
+}
+
+.event-intro nav a {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #2f5cff;
+  color: white;
+  text-decoration: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid var(--border);
+  padding: 10px;
+  vertical-align: top;
+}
+
+.slideshow-container {
+  min-height: 120px;
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+}
+
+.prev,
+.next {
+  border: 0;
+  background: #2f5cff;
+  color: white;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.dots {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 4px;
+  background: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+article {
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.related-events {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+footer {
+  margin-top: 20px;
+}
