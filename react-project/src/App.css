@@ -1,6 +1,81 @@
-.page-content {
+.page-content,
+.exercise-page {
   text-align: left;
   padding: 24px;
+}
+
+.page-link-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+.page-link-btn {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #2f5cff;
+  color: white;
+  text-decoration: none;
+}
+
+.entities-gallery {
+  margin-bottom: 24px;
+}
+
+.entities-gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.entity-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.entity-card__image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.entity-card h3 {
+  margin: 0;
+  color: var(--text-h);
+}
+
+.entity-card__date {
+  font-weight: 600;
+}
+
+.survey__form {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 520px;
+}
+
+.survey__option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.survey button {
+  width: fit-content;
+  border: 0;
+  background: #2f5cff;
+  color: white;
+  border-radius: 6px;
+  padding: 8px 14px;
+  cursor: pointer;
 }
 
 .event-intro {
