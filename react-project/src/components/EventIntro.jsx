@@ -1,4 +1,6 @@
 import heroImg from '../assets/image.png'
+import { Link } from 'react-router-dom'
+import Countdown from './Countdown'
 
 const EventIntro = () => {
   return (
@@ -15,10 +17,12 @@ const EventIntro = () => {
         Não percas esta oportunidade para ver os melhores levantadores de peso do mundo a competir!
       </p>
 
-      <h2>Faltam poucos dias para o evento!</h2>
+      <Countdown eventDate="2026-06-25T09:00:00" />
 
       <nav>
-        <a href="form.html">Formulário de Candidatura</a>
+        <Link to="/inquerito">Responder ao Inquerito</Link>
+        <Link to="/voluntariado">Candidatar-me como Voluntario</Link>
+        <Link to="/bilhetes">Comprar Bilhetes</Link>
       </nav>
     </section>
   )

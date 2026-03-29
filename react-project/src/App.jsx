@@ -1,56 +1,35 @@
-import { useEffect, useState } from 'react'
-import Header from './components/Header'
-import EventIntro from './components/EventIntro'
-import ProgramSection from './components/ProgramSection'
-import SlideshowSection from './components/SlideshowSection'
-import NewsSection from './components/NewsSection'
-import RelatedEvents from './components/RelatedEvents'
-import Footer from './components/Footer'
-import ExercisePage from './components/ExercisePage'
+import { Navigate, Route, Routes } from 'react-router-dom'
+import Layout from './components/Layout'
+import HomePage from './pages/HomePage'
+import GaleriaPage from './pages/GaleriaPage'
+import InqueritoPage from './pages/InqueritoPage'
+import ResultadosPage from './pages/ResultadosPage'
+import VoluntariadoPage from './pages/VoluntariadoPage.jsx'
+import BilhetesPage from './pages/BilhetesPage.jsx'
+import SuccessPage from './components/SuccessPage.jsx'
 import './App.css'
 
-const getCurrentPage = () =>
-  window.location.hash === '#entidades' ? 'entidades' : 'home'
-
 function App() {
-  const [currentPage, setCurrentPage] = useState(getCurrentPage)
-
-  useEffect(() => {
-    const handleHashChange = () => {
-      setCurrentPage(getCurrentPage())
-    }
-
-    window.addEventListener('hashchange', handleHashChange)
-    return () => window.removeEventListener('hashchange', handleHashChange)
-  }, [])
-
-  if (currentPage === 'entidades') {
-    return <ExercisePage />
-  }
-
   return (
-    <>
-      <Header />
-
-      <main className="page-content">
-        <div className="page-link-row">
-          <a className="page-link-btn" href="#entidades">
-            Ver galeria e inquerito
-          </a>
-        </div>
-
-        <EventIntro />
-        <hr />
-        <ProgramSection />
-        <hr />
-        <SlideshowSection />
-        <hr />
-        <NewsSection />
-        <hr />
-        <RelatedEvents />
-        <Footer />
-      </main>
-    </>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/galeria" element={<GaleriaPage />} />
+        <Route path="/inquerito" element={<InqueritoPage />} />
+        <Route path="/resultados" element={<ResultadosPage />} />
+        <Route path="/voluntariado" element={<VoluntariadoPage />} />
+        <Route path="/bilhetes" element={<BilhetesPage />} />
+        <Route
+          path="/sucesso-voluntariado"
+          element={<SuccessPage message="Obrigado pela tua candidatura!" />}
+        />
+        <Route
+          path="/sucesso-bilhetes"
+          element={<SuccessPage message="Compra realizada com sucesso!" />}
+        />
+      </Route>
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
   )
 }
 

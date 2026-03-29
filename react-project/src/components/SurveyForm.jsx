@@ -1,8 +1,10 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import entities from '../data/entities.json'
 
 const SurveyForm = () => {
   const [selectedEntityId, setSelectedEntityId] = useState('')
+  const navigate = useNavigate()
 
   const handleOptionChange = (event) => {
     setSelectedEntityId(event.target.value)
@@ -16,13 +18,12 @@ const SurveyForm = () => {
       return
     }
 
-    const selectedEntity = entities.find(
-      (entity) => String(entity.id) === selectedEntityId,
-    )
-
-    if (selectedEntity) {
-      alert(`Opcao escolhida: ${selectedEntity.nome}`)
-    }
+    navigate('/resultados', {
+      state: {
+        selectedEntityId,
+        submissionId: `${Date.now()}-${selectedEntityId}`,
+      },
+    })
   }
 
   return (
